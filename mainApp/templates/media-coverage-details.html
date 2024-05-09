@@ -1,0 +1,311 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/pragati/banner-2.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Media Coverage Details</h1>
+                    <!-- <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li>News</li>
+                        <li><span>List View 01</span></li>
+                    </ul> -->
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- sidebar-page-container -->
+        <section class="sidebar-page-container"> 
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                        <div class="blog-list-content">
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="blog-details.html"><img src="{{mcddata.image.url}}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>{{mcddata.date}}</h6>
+                                        <!-- <ul class="post-info clearfix">
+                                            <li>In <a href="blog-details.html">Annoucement</a></li>
+                                            <li>By <a href="blog-details.html">Colmin Neil</a></li>
+                                        </ul> -->
+                                        <h2><a href="blog-details.html">{{mcddata.title}}</a></h2>
+                                        <p>{{mcddata.content|safe}}</p>
+                                        <!-- <div class="lower-box">
+                                            <div class="link-box"><a href="blog-details.html"><span>Read More</span></a></div>
+                                            <ul class="other-info clearfix">
+                                                <li><img src="{%static 'assets/images/icons/icon-118.png" alt="">24 Comments</li>
+                                                <li><img src="{%static 'assets/images/icons/icon-119.png" alt=""><a href="blog-details.html">Share</a></li>
+                                            </ul>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="blog-details.html"><img src="{%static 'assets/images/news/news-24.jpg'%}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>Dec 28, 2022</h6>
+                                        <ul class="post-info clearfix">
+                                            <li>In <a href="blog-details.html">City News</a></li>
+                                            <li>By <a href="blog-details.html">Laila Madison</a></li>
+                                        </ul>
+                                        <h2><a href="blog-details.html">Last Chance to get Tickets for Christmas Fireworks</a></h2>
+                                        <p>In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best to be welcomed...</p>
+                                        <div class="lower-box">
+                                            <div class="link-box"><a href="blog-details.html"><span>Read More</span></a></div>
+                                            <ul class="other-info clearfix">
+                                                <li><img src="{%static 'assets/images/icons/icon-118.png" alt="">06 Comments</li>
+                                                <li><img src="{%static 'assets/images/icons/icon-119.png" alt=""><a href="blog-details.html">Share</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="blog-details.html"><img src="{%static 'assets/images/news/news-25.jpg'%}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>Dec 14, 2022</h6>
+                                        <ul class="post-info clearfix">
+                                            <li>In <a href="blog-details.html">Council</a></li>
+                                            <li>By <a href="blog-details.html">Boone Gerardo</a></li>
+                                        </ul>
+                                        <h2><a href="blog-details.html">Mayor Invites Med Experts to Discuss about Covid</a></h2>
+                                        <p>The claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted...</p>
+                                        <div class="lower-box">
+                                            <div class="link-box"><a href="blog-details.html"><span>Read More</span></a></div>
+                                            <ul class="other-info clearfix">
+                                                <li><img src="{%static 'assets/images/icons/icon-118.png" alt="">12 Comments</li>
+                                                <li><img src="{%static 'assets/images/icons/icon-119.png" alt=""><a href="blog-details.html">Share</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="blog-details.html"><img src="{%static 'assets/images/news/news-26.jpg'%}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>Jan 01, 2023</h6>
+                                        <ul class="post-info clearfix">
+                                            <li>In <a href="blog-details.html">Annoucement</a></li>
+                                            <li>By <a href="blog-details.html">Colmin Neil</a></li>
+                                        </ul>
+                                        <h2><a href="blog-details.html">Announces the Launch of the Small Business Relief</a></h2>
+                                        <p>Denounce with righteous indignation and dislike men who are so and demoralized by the charms of pleasure of the moment...</p>
+                                        <div class="lower-box">
+                                            <div class="link-box"><a href="blog-details.html"><span>Read More</span></a></div>
+                                            <ul class="other-info clearfix">
+                                                <li><img src="{%static 'assets/images/icons/icon-118.png" alt="">24 Comments</li>
+                                                <li><img src="{%static 'assets/images/icons/icon-119.png" alt=""><a href="blog-details.html">Share</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="blog-details.html"><img src="{%static 'assets/images/news/news-27.jpg'%}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>Dec 28, 2022</h6>
+                                        <ul class="post-info clearfix">
+                                            <li>In <a href="blog-details.html">City News</a></li>
+                                            <li>By <a href="blog-details.html">Laila Madison</a></li>
+                                        </ul>
+                                        <h2><a href="blog-details.html">Last Chance to get Tickets for Christmas Fireworks</a></h2>
+                                        <p>In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best to be welcomed...</p>
+                                        <div class="lower-box">
+                                            <div class="link-box"><a href="blog-details.html"><span>Read More</span></a></div>
+                                            <ul class="other-info clearfix">
+                                                <li><img src="{%static 'assets/images/icons/icon-118.png" alt="">06 Comments</li>
+                                                <li><img src="{%static 'assets/images/icons/icon-119.png" alt=""><a href="blog-details.html">Share</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="blog-details.html"><img src="{%static 'assets/images/news/news-28.jpg'%}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>Dec 14, 2022</h6>
+                                        <ul class="post-info clearfix">
+                                            <li>In <a href="blog-details.html">Council</a></li>
+                                            <li>By <a href="blog-details.html">Boone Gerardo</a></li>
+                                        </ul>
+                                        <h2><a href="blog-details.html">Mayor Invites Med Experts to Discuss about Covid</a></h2>
+                                        <p>The claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted...</p>
+                                        <div class="lower-box">
+                                            <div class="link-box"><a href="blog-details.html"><span>Read More</span></a></div>
+                                            <ul class="other-info clearfix">
+                                                <li><img src="{%static 'assets/images/icons/icon-118.png" alt="">12 Comments</li>
+                                                <li><img src="{%static 'assets/images/icons/icon-119.png" alt=""><a href="blog-details.html">Share</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="pagination-wrapper">
+                                <ul class="pagination clearfix">
+                                    <li><a href="blog-3.html"><i class="flaticon-right-chevron"></i></a></li>
+                                    <li><a href="blog-3.html" class="current">1</a></li>
+                                    <li><a href="blog-3.html">2</a></li>
+                                    <li><a href="blog-3.html">3</a></li>
+                                    <li><a href="blog-3.html"><i class="flaticon-right-chevron"></i></a></li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                        <div class="blog-sidebar default-sidebar">
+                            <div class="search-widget sidebar-widget">
+                                <div class="search-form">
+                                    <form method="post" action="https://st.ourhtmldemo.com/template/Towns-ville/events-2.html">
+                                        <div class="form-group">
+                                            <input type="search" name="search-field" placeholder="Search ..." required>
+                                            <button type="submit"><img src="{%static 'assets/images/icons/icon-111.png" alt=""></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="about-widget sidebar-widget">
+                                <div class="widget-title">
+                                    <h3>About Author</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="team-block-one">
+                                        <div class="inner-box">
+                                            <div class="shape" style="background-image: url('{%static 'assets/images/shape/shape-33.png'%}');"></div>
+                                            <figure class="image-box"><img src="{%static 'assets/images/team/team-1.jpg'%}" alt=""></figure>
+                                            <div class="share-box">
+                                                <span class="share-text"><i class="flaticon-sharing"></i>Share</span>
+                                                <ul class="share-links">
+                                                    <li><a href="index.html"><span class="fab fa-facebook-square"></span></a></li>
+                                                    <li><a href="index.html"><span class="fab fa-twitter-square"></span></a></li>
+                                                    <li><a href="index.html"><span class="fab fa-instagram-square"></span></a></li>
+                                                </ul>
+                                            </div>
+                                            <h3><span>Hi, I am</span> Bertram Irvin</h3>
+                                            <p>Holds in these matters to this pleasures to secure.</p>
+                                            <div class="link-box">
+                                                <a href="blog-2.html"><span>All My Post</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category-widget sidebar-widget">
+                                <div class="widget-title">
+                                    <h3>Categories</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="category-list clearfix">
+                                        <li><a href="blog-details.html">Announcement</a></li>
+                                        <li><a href="blog-details.html">Education</a></li>
+                                        <li><a href="blog-details.html">Opportunities</a></li>
+                                        <li><a href="blog-details.html">Public Information</a></li>
+                                        <li><a href="blog-details.html">Regeneration</a></li>
+                                        <li><a href="blog-details.html">Tourist Guide</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="post-widget sidebar-widget">
+                                <div class="widget-title">
+                                    <h3>Popular Post</h3>
+                                </div>
+                                <div class="post-inner">
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="event-details.html"><img src="{%static 'assets/images/news/post-1.jpg'%}" alt=""></a></figure>
+                                        <h6><i class="fa-regular fa-calendar"></i>Jan 01, 2023</h6>
+                                        <h4><a href="event-details.html">Announces the Launch of The Small Business Relief</a></h4>
+                                    </div>
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="event-details.html"><img src="{%static 'assets/images/news/post-2.jpg'%}" alt=""></a></figure>
+                                        <h6><i class="fa-regular fa-calendar"></i>Dec 28, 2022</h6>
+                                        <h4><a href="event-details.html">Last Chance to get Tickets for Christmas Fireworks</a></h4>
+                                    </div>
+                                    <div class="post">
+                                        <figure class="post-thumb"><a href="event-details.html"><img src="{%static 'assets/images/news/post-3.jpg'%}" alt=""></a></figure>
+                                        <h6><i class="fa-regular fa-calendar"></i>Dec 14, 2022</h6>
+                                        <h4><a href="event-details.html">Mayor Invites Med Experts to Discuss about Covid</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tags-widget sidebar-widget">
+                                <div class="widget-title">
+                                    <h3>Popular Tag</h3>
+                                </div>
+                                <div class="widget-content">
+                                    <ul class="tags-list clearfix">
+                                        <li><a href="blog-details.html">Activities</a></li>
+                                        <li><a href="blog-details.html">Certificates</a></li>
+                                        <li><a href="blog-details.html">Culture</a></li>
+                                        <li><a href="blog-details.html">Departments</a></li>
+                                        <li><a href="blog-details.html">Drinks & Food</a></li>
+                                        <li><a href="blog-details.html">Mayor</a></li>
+                                        <li><a href="blog-details.html">Recreation</a></li>
+                                        <li><a href="blog-details.html">Taxes & Bills</a></li>
+                                        <li><a href="blog-details.html">Transport</a></li>
+                                        <li><a href="blog-details.html">Utilities</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="banner-widget centred">
+                                <div class="inner-box" style="background-image: url('{%static 'assets/images/resource/sidebar-2.jpg'%}');">
+                                    <div class="shape" style="background-image: url('{%static 'assets/images/shape/shape-31.png'%}');"></div>
+                                    <h2>Townsville</h2>
+                                    <h3>Join Together <br />to City Development</h3>
+                                    <p>Business will frequently.</p>
+                                    <div class="btn-box">
+                                        <a href="events-2.html" class="theme-btn btn-one">Our Campaigns</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+        <!-- sidebar-page-container end -->
+
+
+        <!-- subscribe-section -->
+        <!-- <section class="subscribe-section">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/background/subscribe-bg.jpg'%}');"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="inner-box">
+                        <div class="sec-title light centred">
+                            <div class="icon-box"><i class="flaticon-mail"></i></div>
+                            <h2>Newsletter Subscription</h2>
+                            <p>Subscribe us and get news, events and all updates from townsville to your inbox.</p>
+                        </div>
+                        <div class="form-inner">
+                            <form action="https://st.ourhtmldemo.com/template/Towns-ville/contact.html" method="post">
+                                <div class="form-group">
+                                    <div class="icon"><i class="far fa-envelope-open"></i></div>
+                                    <input type="email" name="email" placeholder="Your Email Address..." required>
+                                    <button type="submit" class="theme-btn btn-one">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- subscribe-section end -->
+
+
+        {%endblock%}

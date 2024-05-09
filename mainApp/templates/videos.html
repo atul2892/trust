@@ -1,0 +1,95 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/pragati/banner-2.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Videos</h1>
+                    <!-- <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li>News</li>
+                        <li><span>Grid View 01</span></li>
+                    </ul> -->
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- blog-grid-one -->
+        <section class="blog-grid-one"> 
+            <div class="auto-container">
+                <div class="row clearfix">
+                    {%for i in ytvdatafinal%}
+                    <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                        <div class="news-block-two wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                            <div class="inner-box"  style="height: 450px;">
+                                <figure class="image-box"><a href="blog-details.html">
+                                    <iframe width="380" height="250" src="{{i.link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                    <!-- <img src="{%static 'assets/images/news/news-4.jpg'%}" alt=""> -->
+                                </a></figure>
+                                <div class="lower-content">
+                                    <h5>
+                                        {{i.title|slice:":140"}}
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+                <div class="pagination-wrapper centred">
+                    <ul class="pagination clearfix">
+                        {% if ytvdatafinal.has_previous %}
+                        <li><a href="/videos/?page={{ytvdatafinal.previous_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                        {% endif %}
+                        {% for n in page_range %}
+                        <li><a href="/videos/?page={{n}}" class="font-s {%if ytvdatafinal.number == n%}current{%endif%}">{{n}}</a></li>
+                        {% endfor %}
+                        {% if ytvdatafinal.has_next %}
+                        <li><a href="/videos/?page={{ytvdatafinal.next_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- blog-grid-one end -->
+
+
+        <!-- subscribe-section -->
+        <!-- <section class="subscribe-section">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/background/subscribe-bg.jpg'%}');"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="inner-box">
+                        <div class="sec-title light centred">
+                            <div class="icon-box"><i class="flaticon-mail"></i></div>
+                            <h2>Newsletter Subscription</h2>
+                            <p>Subscribe us and get news, events and all updates from townsville to your inbox.</p>
+                        </div>
+                        <div class="form-inner">
+                            <form action="https://st.ourhtmldemo.com/template/Towns-ville/contact.html" method="post">
+                                <div class="form-group">
+                                    <div class="icon"><i class="far fa-envelope-open"></i></div>
+                                    <input type="email" name="email" placeholder="Your Email Address..." required>
+                                    <button type="submit" class="theme-btn btn-one">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- subscribe-section end -->
+
+
+        {%endblock%}

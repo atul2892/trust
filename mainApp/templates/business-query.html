@@ -1,0 +1,209 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/pragati/banner-2.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Business Query</h1>
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+                <!-- contact-style-two -->
+                <section class="contact-style-two">
+                    <div class="auto-container">
+                        <div class="row clearfix">
+                            <!-- <div class="col-lg-4 col-md-12 col-sm-12 map-column">
+                                <div class="map-inner">
+                                    <img src="{%static 'assets/images/ravikant/e4.png'%}" alt="">
+                                </div>
+                            </div> -->
+                            <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                                <div class="content-box">
+                                    <div class="container">
+                                        <h2>Business Query Form</h2>
+                                        <p>Fill out this form to send your Query or Complaints.</p>
+                                        
+                                        {%for i in messages%}
+                                        <script>
+                                            alert("{{i}}")
+                                        </script>
+                                        {%endfor%}
+
+                                        <form action="" method="post">
+                                            {%csrf_token%}
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-6 col-sm-12 form-group">
+                                                    <label for="name">Name:</label>
+                                                    <input type="text" id="name" name="name" required>
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-sm-12 form-group">
+                                                    <label for="company">Business Name:</label>
+                                                    <input type="text" id="company" name="business">
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-sm-12 form-group">
+                                                    <label for="email">Email:</label>
+                                                    <input type="email" id="email" name="email">
+                                                </div>
+                                                <div class="col-lg-4 col-md-6 col-sm-12 form-group">
+                                                    <label for="phone">Phone:</label>
+                                                    <input type="text" id="phone" name="phone" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+                                                </div>
+                                                <div class="col-lg-4 col-md-12 col-sm-12 form-group">
+                                                    <label for="address">Address:</label>
+                                                    <input type="text" name="address" required="">
+                                                </div>
+                                                <div class="col-lg-4 col-md-12 col-sm-12 form-group">
+                                                    <label for="location">Location:</label>
+                                                    <input type="text" id="location" name="location">
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                                    <label for="query">Query:</label>
+                                                    <textarea id="query" name="query" rows="2" required></textarea>
+                                                </div>
+                                                <button type="submit">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <style>
+                    .container {
+                        font-family: Arial, sans-serif;
+                        background-color: #f4f4f4;
+                        max-width: 90%;
+                        margin: 0px auto;
+                        background-color: #fff;
+                        padding: 20px;
+                        border-radius: 5px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                    }
+                    .container h2{
+                        margin-bottom: 10px;
+                        text-align: center;
+                    }
+                    .container p{
+                        margin-bottom: 25px;
+                        text-align: center;
+                        color: rgb(255, 64, 0);
+                        font-style: italic;
+                    }
+
+                    label {
+                        display: block;
+                        margin-bottom: 8px;
+                    }
+
+                    input, textarea {
+                        width: 100%;
+                        padding: 8px;
+                        margin-bottom: 16px;
+                        box-sizing: border-box;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+
+                    button {
+                        background-color: #0e0c99;
+                        color: #fff;
+                        padding: 10px 15px;
+                        border: none;
+                        border-radius: 4px;
+                        cursor: pointer;
+                    }
+
+                    button:hover {
+                        background-color: #e74b09;
+                    }
+
+                    @media (max-width: 992px) and (min-width: 830px){
+                        img{
+                            margin-left: 60px;
+                        }
+                    }
+
+
+                </style>
+                <!-- contact-style-two end -->
+
+
+        <!-- contact-info-section -->
+        <section class="contact-info-section centred">
+            <div class="auto-container">
+                <div class="sec-title">
+                    <h2>Reach Us By Following</h2>
+                    <p>The City of Townsville is responding to the COVID-19 pandemic.</p>
+                </div>
+                <div class="tabs-box">
+                    <!-- <div class="tab-btn-box">
+                        <div class="tab-btns tab-buttons">
+                            <div class="tab-btn active-btn" data-tab="#tab-1">Mayor Office</div>
+                            <div class="tab-btn" data-tab="#tab-2">Departments</div>
+                        </div>
+                    </div> -->
+                    <div class="tabs-content">
+                        <div class="tab active-tab" id="tab-1">
+                            <div class="row clearfix">
+                                <div class="col-lg-4 col-md-6 col-sm-12 info-column">
+                                    <div class="info-block-one">
+                                        <div class="inner-box">
+                                            <div class="icon-box"><img src="{%static 'assets/images/icons/icon-86.png'%}" alt=""></div>
+                                            <h3>Location</h3>
+                                            <span class="text">Our City Council Located at</span>
+                                            <div class="text-box">
+                                                <p>46, The queen’s walk,TSV Australia 4810.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 info-column">
+                                    <div class="info-block-one">
+                                        <div class="inner-box">
+                                            <div class="icon-box"><img src="{%static 'assets/images/icons/icon-87.png'%}" alt=""></div>
+                                            <h3>Quick Contact</h3>
+                                            <span class="text">You Can Reach us Quickly Via</span>
+                                            <div class="text-box">
+                                                <p><a href="tel:4488812345">(+44) 888.12.345</a><br /><a href="mailto:mayoroffice@example.com">mayoroffice@example.com</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-sm-12 info-column">
+                                    <div class="info-block-one">
+                                        <div class="inner-box">
+                                            <div class="icon-box"><img src="{%static 'assets/images/icons/icon-88.png'%}" alt=""></div>
+                                            <h3>Off.Hours</h3>
+                                            <span class="text">Our City Council Located at</span>
+                                            <div class="text-box">
+                                                <p>Daily 8.30am to 5.00pm, <br />Sat & Sun Closed</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact-info-section end -->
+
+
+        
+
+
+        {%endblock%}

@@ -1,0 +1,89 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/pragati/banner-2.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Video Gallery</h1>
+                    <!-- <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li>News</li>
+                        <li><span>List View 01</span></li>
+                    </ul> -->
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- sidebar-page-container -->
+        <section class="sidebar-page-container"> 
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                        <div class="blog-list-content">
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="blog-details.html"><img src="{{vgddata.image.url}}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>{{vgddata.date}}</h6>
+                                        <!-- <ul class="post-info clearfix">
+                                            <li>In <a href="blog-details.html">Annoucement</a></li>
+                                            <li>By <a href="blog-details.html">Colmin Neil</a></li>
+                                        </ul> -->
+                                        <h2><a href="blog-details.html">{{vgddata.title}}</a></h2>
+                                        <figure class="image-box"><a href="blog-details.html">
+                                            <iframe width="680" height="400" src="{{vgddata.link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                            
+                                        </a></figure>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- sidebar-page-container end -->
+
+
+        <!-- subscribe-section -->
+        <!-- <section class="subscribe-section">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/background/subscribe-bg.jpg'%}');"></div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="inner-box">
+                        <div class="sec-title light centred">
+                            <div class="icon-box"><i class="flaticon-mail"></i></div>
+                            <h2>Newsletter Subscription</h2>
+                            <p>Subscribe us and get news, events and all updates from townsville to your inbox.</p>
+                        </div>
+                        <div class="form-inner">
+                            <form action="https://st.ourhtmldemo.com/template/Towns-ville/contact.html" method="post">
+                                <div class="form-group">
+                                    <div class="icon"><i class="far fa-envelope-open"></i></div>
+                                    <input type="email" name="email" placeholder="Your Email Address..." required>
+                                    <button type="submit" class="theme-btn btn-one">Subscribe</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- subscribe-section end -->
+
+
+        {%endblock%}

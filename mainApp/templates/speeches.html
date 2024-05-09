@@ -1,0 +1,99 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/pragati/banner-2.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Speeches</h1>
+                    <!-- <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li>Events</li>
+                        <li><span>Grid View</span></li>
+                    </ul> -->
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- event-section -->
+        <section class="event-section event-page-section">
+            <div class="auto-container">
+                <div class="filter-box">
+                    <div class="filter-inner">
+                        <form action="" method="post">
+                            {%csrf_token%}
+                            <div class="row clearfix">
+                                <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                                    <div class="form-group">
+                                        <!-- <div class="icon-box"><i class="fa-regular fa-calendar-days"></i></div>
+                                        <input type="text" name="date" placeholder="Speeches Date" id="datepicker_2"> -->
+                                        <input type="date" name="date" placeholder="Speeches Date">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter-btn">
+                                <button type="submit" class="theme-btn btn-one">Find</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    {%for i in spdatafinal%}
+                    <div class="col-lg-4 col-md-6 col-sm-12 event-block">
+                        <div class="event-block-one" style="height: 600px;">
+                            <div class="inner-box">
+                                <div class="image-box">
+                                    <figure class="image"><a href="/speeches-details/{{i.id}}"><img src="{{i.image.url}}" style="height: 300px;" alt=""></a></figure>
+                                </div>
+                                <div class="lower-content">
+                                    <div class="text-box">
+                                        <h3><a href="/speeches-details/{{i.id}}">{{i.title|slice:":50"}}</a></h3>
+                                        <ul class="info-list clearfix">
+                                            <p>{{i.content|safe|slice:":101"}}</p>
+                                        </ul>
+                                    </div>
+                                    <div class="lower-box">
+                                        <div class="link-box">
+                                            <a href="/speeches-details/{{i.id}}"><span>Read More</span></a>
+                                        </div>
+                                        <div class="share-box">
+                                            <p></i>{{i.date|date:"m/d/20y"}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    
+                </div>
+
+                <div class="pagination-wrapper centred">
+                    <ul class="pagination clearfix">
+                        {% if spdatafinal.has_previous %}
+                        <li><a href="/speeches/?page={{spdatafinal.previous_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                        {% endif %}
+                        {%  for n in page_range %}
+                        <li><a href="/speeches/?page={{n}}" class="font-s {%if spdatafinal.number == n%}current{%endif%}">{{n}}</a></li>
+                        {% endfor %}
+                        {% if spdatafinal.has_next %}
+                        <li><a href="/speeches/?page={{spdatafinal.next_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        
+
+        {%endblock%}

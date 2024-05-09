@@ -1,0 +1,75 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/pragati/banner-2.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Media Coverage</h1>
+                    <!-- <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li>News</li>
+                        <li><span>List View 01</span></li>
+                    </ul> -->
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- sidebar-page-container -->
+        <section class="sidebar-page-container"> 
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                        <div class="blog-list-content">
+                            {%for i in mcdatafinal%}
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box"><a href="/media-coverage-details/{{i.id}}"><img src="{{i.image.url}}" alt=""></a></figure>
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>{{i.date}}</h6>
+                                        <h2><a href="/media-coverage-details/{{i.id}}">{{i.title}}</a></h2>
+                                        <p>{{i.content|safe|slice:":318"}}</p>
+                                        <div class="lower-box">
+                                            <div class="link-box"><a href="/media-coverage-details/{{i.id}}"><span>Read More</span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                            
+                            <div class="pagination-wrapper centred">
+                                <ul class="pagination clearfix">
+                                    {% if mcdatafinal.has_previous %}
+                                    <li><a href="/media-coverage/?page={{mcdatafinal.previous_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                                    {% endif %}
+                                    {%  for n in page_range %}
+                                    <li><a href="/media-coverage/?page={{n}}" class="font-s {%if mcdatafinal.number == n%}current{%endif%}">{{n}}</a></li>
+                                    {% endfor %}
+                                    {% if mcdatafinal.has_next %}
+                                    <li><a href="/media-coverage/?page={{mcdatafinal.next_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- sidebar-page-container end -->
+
+
+        
+
+
+        {%endblock%}

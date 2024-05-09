@@ -1,0 +1,62 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/pragati/banner-2.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Gallery</h1>
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- project-section -->
+        <section class="project-section sec-pad">
+            <div class="auto-container">
+                <!-- <div class="sec-title centred">
+                    <h2>What We Have Done</h2>
+                    <p>The City of Townsville is responding to the COVID-19 pandemic.</p>
+                </div> -->
+                <div class="sortable-masonry">
+                    
+                    <div class="items-container row clearfix">
+                        {%for i in gldatafinal%}
+                        <div class="col-lg-4 col-md-6 col-sm-12 masonry-item small-column all tourist conference celebration">
+                            <div class="project-block-one">
+                                <div class="inner-box">
+                                    <figure class="image-box"><img src="{{i.image.url}}" style="height: 300px;" alt=""></figure>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                    <div class="pagination-wrapper centred">
+                        <ul class="pagination clearfix">
+                            {% if gldatafinal.has_previous %}
+                            <li><a href="/gallery/?page={{gldatafinal.previous_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                            {% endif %}
+                            {%  for n in page_range %}
+                            <li><a href="/gallery/?page={{n}}" class="font-s {%if gldatafinal.number == n%}current{%endif%}">{{n}}</a></li>
+                            {% endfor %}
+                            {% if gldatafinal.has_next %}
+                            <li><a href="/gallery/?page={{gldatafinal.next_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- project-section end -->
+
+        {%endblock%}

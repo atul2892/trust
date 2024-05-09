@@ -1,0 +1,74 @@
+{%extends "index.html"%}
+{%load static%}
+{%block body%}
+
+
+        <!-- page-title -->
+        <section class="page-title">
+            <div class="bg-layer" style="background-image: url('{%static 'assets/images/background/page-title-6.jpg'%}');"></div>
+            <div class="pattern-layer" style="background-image: url('{%static 'assets/images/shape/shape-20.png'%}');"></div>
+            <div class="line-box">
+                <div class="line-1"></div>
+                <div class="line-2"></div>
+            </div>
+            <div class="auto-container">
+                <div class="content-box">
+                    <h1>Daily Updates</h1>
+                    <!-- <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li>News</li>
+                        <li><span>List View 01</span></li>
+                    </ul> -->
+                </div>
+            </div>
+        </section>
+        <!-- page-title end -->
+
+
+        <!-- sidebar-page-container -->
+        <section class="sidebar-page-container"> 
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 content-side">
+                        <div class="blog-list-content">
+                            {%for i in dudatafinal%}
+                            <div class="news-block-two">
+                                <div class="inner-box">
+                                    {% comment %} <figure class="image-box"><a href="/news-details/{{i.id}}"><img src="{{i.image.url}}" alt=""></a></figure> {% endcomment %}
+                                    <div class="lower-content">
+                                        <h6><i class="fa-regular fa-calendar-days"></i>{{i.date}}</h6>
+                                        <h2><a href="/daily-updates-details/{{i.id}}">{{i.title}}</a></h2>
+                                        <p>{{i.content|safe|slice:":280"}}</p>
+                                        <div class="lower-box">
+                                            <div class="link-box"><a href="/daily-updates-details/{{i.id}}"><span>Read More</span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {%endfor%}
+                            
+                            <div class="pagination-wrapper centred">
+                                <ul class="pagination clearfix">
+                                    {% if dudatafinal.has_previous %}
+                                    <li><a href="/daily-updates/?page={{dudatafinal.previous_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                                    {% endif %}
+                                    {%  for n in page_range %}
+                                    <li><a href="/daily-updates/?page={{n}}" class="font-s {%if dudatafinal.number == n%}current{%endif%}">{{n}}</a></li>
+                                    {% endfor %}
+                                    {% if dudatafinal.has_next %}
+                                    <li><a href="/daily-updates/?page={{dudatafinal.next_page_number}}" class="current"><i class="flaticon-right-chevron"></i></a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!-- sidebar-page-container end -->
+
+
+
+
+        {%endblock%}
